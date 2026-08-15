@@ -1,0 +1,1 @@
+g++ -W -Wall -Wextra -Wno-unused-parameter -O3 -march=native -mtune=native -flto=2 -g -fPIC  -DDEFAULT_HARDWARE=regular -I./rp1/rp1_pio_vendor/piolib/include -I./rp1/rp1_pio_vendor/include -fno-exceptions -std=c++11
