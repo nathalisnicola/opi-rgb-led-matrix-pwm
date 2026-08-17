@@ -1,6 +1,8 @@
 # opi-rgb-led-matrix-pwm
 rgb-led-matrix-pwm for Orange Pi Zero 2W
 
+![](img/1200px-Zero2w-img7.png)
+
 Armbian fix:
 sudo sysctl -w kernel.sched_rt_runtime_us=-1
 
