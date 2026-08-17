@@ -1600,7 +1600,8 @@ void spwm_clock_pulse(GPIO *io, const HardwareMapping &h,
                       gpio_bits_t spwm_out_bits,
                       gpio_bits_t spwm_write_mask,
                       SPWM_OE_Gate_State *spwm_gate) {
-  io->WriteMaskedBits(spwm_out_bits, spwm_write_mask);
+///  io->WriteMaskedBits(spwm_out_bits, spwm_write_mask ); ///nefinta
+  io->WriteMaskedBits(spwm_out_bits, spwm_write_mask | h.clock); ///finta
 
   if (spwm_gate != nullptr && spwm_gate->remaining > 0 && !spwm_gate->active) {
     spwm_gate->active = true;
@@ -1615,7 +1616,7 @@ void spwm_clock_pulse(GPIO *io, const HardwareMapping &h,
   }
 
   io->SetBits(h.clock);
-  io->ClearBits(h.clock);
+///  io->ClearBits(h.clock);
 
   if (spwm_gate != nullptr && spwm_gate->active && spwm_gate->remaining > 0) {
     if (spwm_gate->pulse_each_clock) {
