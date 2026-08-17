@@ -3,12 +3,15 @@ rgb-led-matrix-pwm for Orange Pi Zero 2W
 
 ![](img/1200px-Zero2w-img7.png)
 
-Armbian fix:
-    `sudo sysctl -w kernel.sched_rt_runtime_us=-1`
+Armbian priority fix:
+```
+    sudo sysctl -w kernel.sched_rt_runtime_us=-1
+```
 Armbian core isolation:    
-    `sudo nano /boot/armbianEnv.txt`
-    `extraargs=isolcpus=3 nohz_full=3 rcu_nocbs=3 irqaffinity=0,1,2`
-
+```
+    sudo nano /boot/armbianEnv.txt
+    extraargs=isolcpus=3 nohz_full=3 rcu_nocbs=3 irqaffinity=0,1,2
+```
 
 ---
 
